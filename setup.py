@@ -18,6 +18,7 @@ setup(
     extras_require={
         'test': [
             'pytest==5.*,>=5.2.0',
+            'pytest-cov==4.*,>=4.4',
             'nose==1.*,>=1.3.7',
             'ipykernel==5.*,>=5.3.4'
         ],
