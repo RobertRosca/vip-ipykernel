@@ -1,3 +1,10 @@
+"""Taken and modified from
+https://github.com/ipython/ipykernel/blob/master/ipykernel/kernelspec.py
+
+Copied here to remove the dependency on `ipykernel` itself, as just the kernel
+file needs to be written.
+"""
+
 # Copyright (c) IPython Development Team.
 # Distributed under the terms of the Modified BSD License.
 
@@ -18,12 +25,12 @@ KERNEL_NAME = 'python%i' % sys.version_info[0]
 RESOURCES = pjoin(os.path.dirname(__file__), 'resources')
 
 
-def make_ipkernel_cmd(mod='ipykernel_launcher', executable=None, extra_arguments=None, **kw):
-    """Build Popen command list for launching an IPython kernel.
+def make_vip_ipkernel_cmd(mod='vip_ipykernel.vip_ipykernel_launcher', executable=None, extra_arguments=None, **kw):
+    """Build Popen command list for launching an ViP-IPython kernel.
 
     Parameters
     ----------
-    mod : str, optional (default 'ipykernel')
+    mod : str, optional (default 'vip_ipykernel.vip_ipykernel_launcher')
         A string of an IPython module whose __main__ starts an IPython kernel
 
     executable : str, optional (default sys.executable)
@@ -40,7 +47,7 @@ def make_ipkernel_cmd(mod='ipykernel_launcher', executable=None, extra_arguments
     if executable is None:
         executable = sys.executable
     extra_arguments = extra_arguments or []
-    arguments = [executable, '-m', mod, '-f', '{connection_file}']
+    arguments = [executable, '-m', mod, '-m', 'ipykernel_launcher', '-f', '{connection_file}']
     arguments.extend(extra_arguments)
 
     return arguments
@@ -49,7 +56,7 @@ def make_ipkernel_cmd(mod='ipykernel_launcher', executable=None, extra_arguments
 def get_kernel_dict(extra_arguments=None):
     """Construct dict for kernel.json"""
     return {
-        'argv': make_ipkernel_cmd(extra_arguments=extra_arguments),
+        'argv': make_vip_ipkernel_cmd(extra_arguments=extra_arguments),
         'display_name': 'Python %i' % sys.version_info[0],
         'language': 'python',
     }
