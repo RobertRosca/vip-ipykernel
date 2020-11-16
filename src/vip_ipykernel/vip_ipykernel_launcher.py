@@ -40,8 +40,6 @@ if __name__ == '__main__':
 
     args = sys.argv
 
-    Instance(logging.Logger)
-
     args[0] = str(venv_search())
 
     #  TODO: I want to use the jupyter logger to print this off but can't figure
