@@ -25,12 +25,12 @@ KERNEL_NAME = 'python%i' % sys.version_info[0]
 RESOURCES = pjoin(os.path.dirname(__file__), 'resources')
 
 
-def make_vip_ipkernel_cmd(mod='vip_ipykernel.vip_ipykernel_launcher', executable=None, extra_arguments=None, **kw):
+def make_vip_ipkernel_cmd(mod='ipykernel_launcher', executable=None, extra_arguments=None, **kw):
     """Build Popen command list for launching an ViP-IPython kernel.
 
     Parameters
     ----------
-    mod : str, optional (default 'vip_ipykernel.vip_ipykernel_launcher')
+    mod : str, optional (default 'ipykernel_launcher')
         A string of an IPython module whose __main__ starts an IPython kernel
 
     executable : str, optional (default sys.executable)
@@ -50,6 +50,7 @@ def make_vip_ipkernel_cmd(mod='vip_ipykernel.vip_ipykernel_launcher', executable
     #  When installing the ViP IPykernel, the first `-m` module call points to
     #  our `vip_ipykernel_launcher`, and the second module call points to the
     #  desired ipykernel launcher module
+    arguments = [executable, '-m', 'vip_ipykernel.vip_ipykernel_launcher', '-m', mod, '-f', '{connection_file}']
     arguments.extend(extra_arguments)
 
     return arguments
