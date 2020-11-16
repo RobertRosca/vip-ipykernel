@@ -4,11 +4,12 @@ https://github.com/ipython/ipykernel/blob/master/ipykernel_launcher.py
 Entry point for launching an ViP-IPython kernel.
 """
 
+import logging
+import subprocess
 import sys
 from pathlib import Path
-import subprocess
+
 from traitlets import Instance
-import logging
 
 VENV_NAMES = ['venv', '.venv']
 ANCHOR = Path(Path.cwd().anchor)
