@@ -154,7 +154,7 @@ from traitlets.config import Application
 
 class InstallIPythonKernelSpecApp(Application):
     """Dummy app wrapping argparse"""
-    name = 'ipython-kernel-install'
+    name = 'vip-ipython-kernel-install'
 
     def initialize(self, argv=None):
         if argv is None:
@@ -164,7 +164,7 @@ class InstallIPythonKernelSpecApp(Application):
     def start(self):
         import argparse
         parser = argparse.ArgumentParser(prog=self.name,
-            description="Install the IPython kernel spec.")
+            description="Install the ViP-IPython kernel spec.")
         parser.add_argument('--user', action='store_true',
             help="Install for the current user instead of system-wide")
         parser.add_argument('--name', type=str, default=KERNEL_NAME,
