@@ -47,7 +47,9 @@ def make_vip_ipkernel_cmd(mod='vip_ipykernel.vip_ipykernel_launcher', executable
     if executable is None:
         executable = sys.executable
     extra_arguments = extra_arguments or []
-    arguments = [executable, '-m', mod, '-m', 'ipykernel_launcher', '-f', '{connection_file}']
+    #  When installing the ViP IPykernel, the first `-m` module call points to
+    #  our `vip_ipykernel_launcher`, and the second module call points to the
+    #  desired ipykernel launcher module
     arguments.extend(extra_arguments)
 
     return arguments
