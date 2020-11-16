@@ -4,12 +4,9 @@ https://github.com/ipython/ipykernel/blob/master/ipykernel_launcher.py
 Entry point for launching an ViP-IPython kernel.
 """
 
-import logging
 import subprocess
 import sys
 from pathlib import Path
-
-from traitlets import Instance
 
 VENV_NAMES = ['venv', '.venv']
 ANCHOR = Path(Path.cwd().anchor)
@@ -27,7 +24,7 @@ def venv_search(prefix: Path = Path('.')) -> Path:
         #  If there are multiple venvs just return the first one
         return found_venvs[0].absolute()
     elif prefix == ANCHOR:
-        return Path(sys.executable)
+        return Path(sys.executable).resolve()
     else:
         return venv_search(prefix=prefix.parent)
 
