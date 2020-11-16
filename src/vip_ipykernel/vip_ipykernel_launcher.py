@@ -1,6 +1,7 @@
-"""Entry point for launching an IPython kernel.
-This is separate from the ipykernel package so we can avoid doing imports until
-after removing the cwd from sys.path.
+"""Taken and modified from
+https://github.com/ipython/ipykernel/blob/master/ipykernel_launcher.py
+
+Entry point for launching an ViP-IPython kernel.
 """
 
 import sys
