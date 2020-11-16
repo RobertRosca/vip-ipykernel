@@ -44,6 +44,8 @@ if __name__ == '__main__':
 
     args[0] = str(venv_search())
 
+    #  TODO: I want to use the jupyter logger to print this off but can't figure
+    #  out how to do that, @takluyver can you help with this?
     print(f"Starting venv kernel with args: {args}")
 
     subprocess.run(args)
