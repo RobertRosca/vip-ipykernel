@@ -5,7 +5,7 @@ readme = ''
 setup(
     long_description=readme,
     name='vip-ipykernel',
-    version='0.1.0',
+    version='0.1.1',
     python_requires='==3.*,>=3.6.0',
     author='Robert Rosca',
     author_email='32569096+RobertRosca@users.noreply.github.com',
