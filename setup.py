@@ -11,7 +11,9 @@ setup(
     author_email='32569096+RobertRosca@users.noreply.github.com',
     packages=['vip_ipykernel'],
     package_dir={"": "src"},
-    package_data={},
+    package_data={
+        "": ["resources/*.*"],
+    },
     install_requires=[
         'jupyter-client==6.*,>=6.1.7',
     ],
