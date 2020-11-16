@@ -32,6 +32,7 @@ modifications made to search for a venv and launch python out of it if possilbe.
 
 ## Todo
 
+- [ ] Expand tests to different versions of ipykernel/jupyter_core
 - [ ] Integration into Jupyter Notebook/Lab logger
 - [ ] Look at ways to show kernel errors
 - [ ] Support for other environments:
