@@ -1,7 +1,8 @@
-from vip_ipykernel.vip_ipykernel_launcher import venv_search
 import os
 import sys
 from pathlib import Path
+
+from vip_ipykernel.vip_ipykernel_launcher import venv_search
 
 
 def test_venv_search(tmp_path):
