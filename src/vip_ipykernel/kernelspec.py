@@ -152,7 +152,7 @@ def install(kernel_spec_manager=None, user=False, kernel_name=KERNEL_NAME, displ
 from traitlets.config import Application
 
 
-class InstallIPythonKernelSpecApp(Application):
+class InstallViPIPythonKernelSpecApp(Application):
     """Dummy app wrapping argparse"""
     name = 'vip-ipython-kernel-install'
 
@@ -201,4 +201,4 @@ class InstallIPythonKernelSpecApp(Application):
 
 
 if __name__ == '__main__':
-    InstallIPythonKernelSpecApp.launch_instance()
+    InstallViPIPythonKernelSpecApp.launch_instance()
