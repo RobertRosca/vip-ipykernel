@@ -59,7 +59,7 @@ The standard python3 kernel is:
 }
 ```
 
-This just says "Run use `python3` to run `ipykernel_launcher` with an argument
+This just says "Run using `python3` to run `ipykernel_launcher` with an argument
 `-f {connection_file}`". When you install the vip ipykernel this is replace by:
 
 ```
