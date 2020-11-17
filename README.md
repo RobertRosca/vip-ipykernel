@@ -2,6 +2,14 @@
 
 Venv in Parent IPykernel
 
+- [ViP IPykernel](#vip-ipykernel)
+  - [Overview](#overview)
+  - [How it Works](#how-it-works)
+  - [Caveats and Gotchas](#caveats-and-gotchas)
+    - [VSCode Jupyter Notebook Integration](#vscode-jupyter-notebook-integration)
+  - [Acknowledgements](#acknowledgements)
+  - [Todo](#todo)
+
 ## Overview
 
 Do you use `venv`'s for all of your environments? Do you run Jupyter out of a
@@ -20,15 +28,81 @@ available inside the venv then it will fail to start.
 This only needs to be installed once, you can do this with `pip install
 vip-ipykernel --user` to install it into your local user environment.
 
-Once the package is installed, run `python3 -m vip_ipykernel.kernelspec  --user`
+Once the package is installed, run `python3 -m vip_ipykernel.kernelspec --user`
 to install the kernel, now when you run a notebook with the default `python3`
 kernel it will instead use the venv in a parent directory.
+
+If you want to revert the changes, run `python3 -m ipykernel install --user`,
+this will re-install the default `python3` kernel.
+
+
+Alternatively, if you don't want to overwrite the default kernel, then you can
+pass a name (`python3 -m vip_ipykernel.kernelspec --user --name venv-kernel`) to
+so that the appears separately in the list of kernels, this way it's a bit more
+obvious how the notebooks are intended to run.
+
+## How it Works
+
+The standard python3 kernel is:
+
+```
+{
+ "argv": [
+  "/usr/bin/python3",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "Python 3",
+ "language": "python"
+}
+```
+
+This just says "Run use `python3` to run `ipykernel_launcher` with an argument
+`-f {connection_file}`". When you install the vip ipykernel this is replace by:
+
+```
+{
+ "argv": [
+  "/usr/bin/python3",
+  "-m",
+  "vip_ipykernel.vip_ipykernel_launcher",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "Python 3",
+ "language": "python"
+}
+```
+
+Which will instead run the `vip_ipykernel.vip_ipykernel_launcher` module,
+passing it the arguments `-m ipykernel_launcher -f {connection_file}`. The
+module runs a function `venv_search` which looks in the current directory, and
+upwards to any parent directories, until it finds a `.venv` or `venv` directory
+containing `bin/python3`.
+
+If it finds a venv with python3 in it, it passes the arguments `-m
+ipykernel_launcher -f {connection_file}` to that python executable, which starts
+and connects the kernel from that venv to your current session.
+
+If it does not find a venv, then it will default to the system python executable
+and behave like the standard `python3` kernel.
+
+## Caveats and Gotchas
+
+### VSCode Jupyter Notebook Integration
+
+VSCode manages kernels for its notebooks with its own system, so it will not use
+the vip-ipykernel.
 
 ## Acknowledgements
 
 The kernel implementation and tests are largely copy-and-paste'd directly from
 the [ipykernel project](https://github.com/ipython/ipykernel) with some minor
-modifications made to search for a venv and launch python out of it if possilbe.
+modifications made to search for a venv and launch python out of it if possible.
 
 ## Todo
 
