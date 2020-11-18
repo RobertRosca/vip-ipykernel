@@ -7,6 +7,7 @@ Venv in Parent IPykernel
   - [How it Works](#how-it-works)
   - [Caveats and Gotchas](#caveats-and-gotchas)
     - [VSCode Jupyter Notebook Integration](#vscode-jupyter-notebook-integration)
+    - [Venv Names](#venv-names)
   - [Acknowledgements](#acknowledgements)
   - [Todo](#todo)
 
@@ -35,11 +36,10 @@ kernel it will instead use the venv in a parent directory.
 If you want to revert the changes, run `python3 -m ipykernel install --user`,
 this will re-install the default `python3` kernel.
 
-
 Alternatively, if you don't want to overwrite the default kernel, then you can
 pass a name (`python3 -m vip_ipykernel.kernelspec --user --name venv-kernel`) to
-so that the appears separately in the list of kernels, this way it's a bit more
-obvious how the notebooks are intended to run.
+so that the kernel appears separately in the list of kernels and the default
+behaviour is not modified.
 
 ## How it Works
 
@@ -86,7 +86,8 @@ containing `bin/python3`.
 
 If it finds a venv with python3 in it, it passes the arguments `-m
 ipykernel_launcher -f {connection_file}` to that python executable, which starts
-and connects the kernel from that venv to your current session.
+and connects the kernel from that venv to your current session, in the same way
+that a kernel installed for that specific venv would.
 
 If it does not find a venv, then it will default to the system python executable
 and behave like the standard `python3` kernel.
@@ -97,6 +98,13 @@ and behave like the standard `python3` kernel.
 
 VSCode manages kernels for its notebooks with its own system, so it will not use
 the vip-ipykernel.
+
+### Venv Names
+
+Currently only venv's named `.venv` or `venv` are searched for, if your venv has
+a different name it won't be found, and if you have multiple venv's available
+then the first one (sorted alphanumerically, so `.venv` takes priority over
+`venv`) will be used.
 
 ## Acknowledgements
 
