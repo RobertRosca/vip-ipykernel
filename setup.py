@@ -27,6 +27,7 @@ setup(
     python_requires='==3.*,>=3.6.0',
     author='Robert Rosca',
     author_email='32569096+RobertRosca@users.noreply.github.com',
+    py_modules=['vip_ipykernel_launcher'],
     packages=['vip_ipykernel'],
     package_dir={"": "src"},
     package_data={
@@ -34,6 +35,7 @@ setup(
     },
     install_requires=[
         'jupyter-client==6.*,>=6.1.7',
+        'ipykernel==5.*,>=5.3.4',
     ],
     extras_require={
         'test': [
@@ -41,7 +43,6 @@ setup(
             'pytest-cov==2.*,>=2.10.1',
             'nose==1.*,>=1.3.7',
             'nbval==0.9.*,>=0.9.6',
-            'ipykernel==5.*,>=5.3.4',
         ],
     },
 )
