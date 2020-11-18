@@ -1,8 +1,8 @@
 import os
-import shutil
+import sys
 from pathlib import Path
 
-from vip_ipykernel.vip_ipykernel_launcher import venv_search
+from vip_ipykernel import venv_search
 
 
 def test_venv_search(tmp_path):
@@ -22,4 +22,4 @@ def test_venv_search_missing(tmp_path):
     os.chdir(tmp_path)
 
     #  Use 'in' instead of '==' as venv_search may return python3.x instead of 3
-    assert str(Path(shutil.which("python3")).resolve()) in str(venv_search())
+    assert str(Path(sys.executable).resolve()) in str(venv_search())
