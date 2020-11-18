@@ -1,21 +1,19 @@
-"""Taken and modified from
-https://github.com/ipython/ipykernel/blob/master/ipykernel/kernelspec.py
-"""
+import sys
 
 import ipykernel.kernelspec
 
 from ipykernel.kernelspec import (
     KERNEL_NAME,
     RESOURCES,
-    make_ipkernel_cmd,
-    get_kernel_dict,
     InstallIPythonKernelSpecApp,
-    install,
+    get_kernel_dict,
+    install, make_ipkernel_cmd
 )
 
-import sys
 
-def make_vip_ipkernel_cmd(mod='ipykernel_launcher', executable=None, extra_arguments=None, **kw):
+def make_vip_ipkernel_cmd(
+    mod='ipykernel_launcher', executable=None, extra_arguments=None, **kw
+):
     """Build Popen command list for launching an ViP-IPython kernel.
 
     Parameters
@@ -44,10 +42,19 @@ def make_vip_ipkernel_cmd(mod='ipykernel_launcher', executable=None, extra_argum
     #  When installing the ViP IPykernel, the first `-m` module call points to
     #  our `vip_ipykernel_launcher`, and the second module call points to the
     #  desired ipykernel launcher module
-    arguments = [executable, '-m', 'vip_ipykernel_launcher', '-m', mod, '-f', '{connection_file}']
+    arguments = [
+        executable,
+        '-m',
+        'vip_ipykernel_launcher',
+        '-m',
+        mod,
+        '-f',
+        '{connection_file}',
+    ]
     arguments.extend(extra_arguments)
 
     return arguments
+
 
 ipykernel.kernelspec.make_ipkernel_cmd = make_vip_ipkernel_cmd
 
