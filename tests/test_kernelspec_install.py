@@ -12,13 +12,12 @@ import os
 from unittest import mock
 
 import nose.tools as nt
-import pytest
 from jupyter_core.paths import jupyter_data_dir
 
 from vip_ipykernel.kernelspec import (
     KERNEL_NAME,
     RESOURCES,
-    InstallViPIPythonKernelSpecApp,
+    InstallIPythonKernelSpecApp,
     install,
 )
 
@@ -34,7 +33,7 @@ def assert_is_spec(path):
 
 
 def test_install_kernelspec(tmp_path):
-    InstallViPIPythonKernelSpecApp.launch_instance(
+    InstallIPythonKernelSpecApp.launch_instance(
         argv=["--prefix", str(tmp_path)]  # `launch_instance` does not like `Path`
     )
 
@@ -82,19 +81,13 @@ def test_install_display_name_overrides_profile(tmp_path):
     assert spec["display_name"] == "Display"
 
 
-@pytest.mark.parametrize("env", [None, dict(spam="spam"), dict(spam="spam", foo="bar")])
-def test_install_env(tmp_path, env):
-    # python 3.5 // tmp_path must be converted to str
-    with mock.patch("jupyter_client.kernelspec.SYSTEM_JUPYTER_PATH", [str(tmp_path)]):
-        install(env=env)
+def test_install_uses_vip_ipykernel(tmp_path):
+    with mock.patch("jupyter_client.kernelspec.SYSTEM_JUPYTER_PATH", [tmp_path]):
+        install()
 
-    spec = tmp_path / "kernels" / KERNEL_NAME / "kernel.json"
-    with spec.open() as f:
+    spec = os.path.join(tmp_path, "kernels", KERNEL_NAME, "kernel.json")
+
+    with open(spec) as f:
         spec = json.load(f)
 
-    if env:
-        assert len(env) == len(spec["env"])
-        for k, v in env.items():
-            assert spec["env"][k] == v
-    else:
-        assert "env" not in spec
+    assert "vip_ipykernel" in spec["argv"][2]
