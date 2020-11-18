@@ -14,10 +14,12 @@ def test_venv_search(tmp_path):
     venv_executable = venv_bin / 'python3'
     venv_executable.touch()
 
-    assert venv_executable == venv_search()
+    #  Use 'in' instead of '==' as venv_search may return python3.x instead of 3
+    assert str(venv_executable) in str(venv_search())
 
 
 def test_venv_search_missing(tmp_path):
     os.chdir(tmp_path)
 
-    assert Path(shutil.which("python3")).resolve() == venv_search()
+    #  Use 'in' instead of '==' as venv_search may return python3.x instead of 3
+    assert str(Path(shutil.which("python3")).resolve()) in str(venv_search())
