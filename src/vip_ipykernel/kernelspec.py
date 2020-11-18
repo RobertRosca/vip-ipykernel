@@ -1,13 +1,13 @@
 import sys
 
 import ipykernel.kernelspec
-
 from ipykernel.kernelspec import (
     KERNEL_NAME,
     RESOURCES,
     InstallIPythonKernelSpecApp,
     get_kernel_dict,
-    install, make_ipkernel_cmd
+    install,
+    make_ipkernel_cmd,
 )
 
 

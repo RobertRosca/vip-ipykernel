@@ -1,3 +1,6 @@
+![https://github.com/RobertRosca/vip-ipykernel/workflows/Tests/badge.svg](https://github.com/RobertRosca/vip-ipykernel/actions?query=workflow%3ATests)
+![https://codecov.io/gh/RobertRosca/vip-ipykernel/branch/main/graph/badge.svg](https://codecov.io/gh/RobertRosca/vip-ipykernel)
+
 # ViP IPykernel
 
 Venv in Parent IPykernel
@@ -67,7 +70,7 @@ This just says "Run using `python3` to run `ipykernel_launcher` with an argument
  "argv": [
   "/usr/bin/python3",
   "-m",
-  "vip_ipykernel.vip_ipykernel_launcher",
+  "vip_ipykernel_launcher",
   "-m",
   "ipykernel_launcher",
   "-f",

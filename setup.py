@@ -18,11 +18,11 @@ def get_version(rel_path):
         raise RuntimeError("Unable to find version string.")
 
 
-readme = ''
-
 setup(
-    long_description=readme,
     name='vip-ipykernel',
+    url='https://github.com/RobertRosca/vip-ipykernel',
+    long_description=read("README.md"),
+    long_description_content_type='text/markdown',
     version=get_version("./src/vip_ipykernel/__init__.py"),
     python_requires='==3.*,>=3.6.0',
     author='Robert Rosca',
@@ -30,9 +30,6 @@ setup(
     py_modules=['vip_ipykernel_launcher'],
     packages=['vip_ipykernel'],
     package_dir={"": "src"},
-    package_data={
-        "": ["resources/*.*"],
-    },
     install_requires=[
         'jupyter-client==6.*,>=6.1.7',
         'ipykernel==5.*,>=5.3.4',
