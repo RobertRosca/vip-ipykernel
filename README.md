@@ -1,5 +1,8 @@
-![https://github.com/RobertRosca/vip-ipykernel/workflows/Tests/badge.svg](https://github.com/RobertRosca/vip-ipykernel/actions?query=workflow%3ATests)
-![https://codecov.io/gh/RobertRosca/vip-ipykernel/branch/main/graph/badge.svg](https://codecov.io/gh/RobertRosca/vip-ipykernel)
+[![Lifecycle](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Release](https://img.shields.io/github/release/robertrosca/vip-ipykernel.svg)](https://github.com/robertrosca/vip-ipykernel/releases/latest)
+
+[![Tests](https://github.com/RobertRosca/vip-ipykernel/workflows/Tests/badge.svg)](https://github.com/RobertRosca/vip-ipykernel/actions?query=workflow%3ATests)
+[![Codecov](https://codecov.io/gh/RobertRosca/vip-ipykernel/branch/main/graph/badge.svg)](https://codecov.io/gh/RobertRosca/vip-ipykernel)
 
 # ViP IPykernel
 
