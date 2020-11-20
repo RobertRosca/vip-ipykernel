@@ -3,7 +3,11 @@ __version__ = '0.1.0a2'
 import sys
 from pathlib import Path
 
-VENV_NAMES = ['venv', '.venv']
+VENV_NAMES = [
+    '.venv',
+    'venv',
+]
+
 ANCHOR = Path(Path.cwd().anchor)
 
 
