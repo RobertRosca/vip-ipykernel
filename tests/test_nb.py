@@ -16,11 +16,11 @@ NB_FILE_STD = pathlib.Path(__file__).parent.absolute() / 'notebook-std.ipynb'
 NB_FILE_VIP = pathlib.Path(__file__).parent.absolute() / 'notebook-vip.ipynb'
 
 
-def test_nb_vip_no_venv(tmp_path):
+def test_nb_vip_no_venv(tmp_path, monkeypatch):
     from vip_ipykernel.kernelspec import install as install_vip
     import vip_ipykernel.kernelspec
 
-    os.chdir(tmp_path)
+    monkeypatch.chdir(tmp_path)
 
     shutil.copy(NB_FILE_STD, ".")
 
@@ -52,11 +52,11 @@ def test_nb_vip_no_venv(tmp_path):
         ])
 
 
-def test_nb_vip_venv(tmp_path):
+def test_nb_vip_venv(tmp_path, monkeypatch):
     from vip_ipykernel.kernelspec import install as install_vip
     import vip_ipykernel.kernelspec
 
-    os.chdir(tmp_path)
+    monkeypatch.chdir(tmp_path)
 
     shutil.copy(NB_FILE_VIP, ".")
 
