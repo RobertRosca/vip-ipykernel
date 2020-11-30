@@ -1,7 +1,8 @@
 import os
 import pathlib
-import subprocess
 import shutil
+import subprocess
+import venv
 from unittest import mock
 
 import pytest
@@ -61,12 +62,7 @@ def test_nb_vip_venv(tmp_path, monkeypatch):
     shutil.copy(NB_FILE_VIP, ".")
 
     #  Create venv in the temporary directory
-    subprocess.run([
-        "python3",
-        "-m",
-        "venv",
-        ".venv"
-    ])
+    venv.create(".venv", with_pip=True)
 
     #  Install ipykernel in it
     subprocess.run([
