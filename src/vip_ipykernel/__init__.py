@@ -17,7 +17,9 @@ def venv_search(prefix: Path = Path('.')) -> Path:
     found_venvs = []
 
     for venv in VENV_NAMES:
-        found_venvs.extend(prefix.glob(f"{venv}/bin/python3"))
+        path = prefix / venv / 'bin' / 'python3'
+        if path.is_file():
+            found_venvs.append(path.absolute())
 
     if any(found_venvs):
         #  If there are multiple venvs just return the first one
