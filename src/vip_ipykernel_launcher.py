@@ -15,7 +15,7 @@ if __name__ == '__main__':
     if sys.path[0] == '':
         del sys.path[0]
 
-    args = sys.argv
+    args = sys.argv.copy()
 
     args[0] = str(venv_search())
 
