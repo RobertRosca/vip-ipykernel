@@ -1,4 +1,4 @@
-[![Lifecycle](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Lifecycle](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Release](https://img.shields.io/github/release/robertrosca/vip-ipykernel.svg)](https://github.com/robertrosca/vip-ipykernel/releases/latest)
 
 [![Tests](https://github.com/RobertRosca/vip-ipykernel/workflows/Tests/badge.svg)](https://github.com/RobertRosca/vip-ipykernel/actions?query=workflow%3ATests)
