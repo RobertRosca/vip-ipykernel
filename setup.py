@@ -31,8 +31,8 @@ setup(
     packages=['vip_ipykernel'],
     package_dir={"": "src"},
     install_requires=[
-        'jupyter-client==6.*,>=6.1.7',
-        'ipykernel==5.*,>=5.3.4',
+        'jupyter-client>=4.2',
+        'ipykernel>=4.4',
     ],
     extras_require={
         'test': [
