@@ -32,11 +32,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install ".[test]"
+        python3 -m pip install --upgrade pip
+        python3 -m pip install ".[test]"
 
     - name: Test with pytest
       run: |
-        pytest -s --verbose --cov=vip_ipykernel
+        python3 -m pytest -s --verbose --cov=vip_ipykernel
 
     - uses: codecov/codecov-action@v1
