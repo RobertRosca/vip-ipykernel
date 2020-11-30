@@ -7,13 +7,13 @@ Entry point for launching an ViP-IPython kernel.
 import os
 import sys
 
-from vip_ipykernel import venv_search
-
 if __name__ == '__main__':
     # Remove the CWD from sys.path while we load stuff.
     # This is added back by InteractiveShellApp.init_path()
     if sys.path[0] == '':
         del sys.path[0]
+
+    from vip_ipykernel import venv_search
 
     args = sys.argv.copy()
 
