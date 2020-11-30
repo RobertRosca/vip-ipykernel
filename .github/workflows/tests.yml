@@ -28,12 +28,18 @@ jobs:
     - uses: actions/cache@v1
       with:
         path: ~/.cache/pip
-        key: ${{ runner.os }}-${{ matrix.python-version }}-pip-${{ hashFiles('**/setup.py') }}
+        key: ${{ runner.os }}-${{ matrix.python-version }}-pip-${{ hashFiles('**/setup.py') }}-${{ hashFiles('.github/dependabot/constraints.txt') }}
 
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
-        python3 -m pip install ".[test]"
+
+        if [ ! ${{ matrix.python-version }} == "3.6" ]; then
+          #  Our constraints can't be applied to python 3.6
+          python3 -m pip install ".[test]" --constraint .github/dependabot/constraints.txt
+        else
+          python3 -m pip install ".[test]"
+        fi
 
     - name: Test with pytest
       run: |
