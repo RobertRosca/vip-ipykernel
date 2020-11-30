@@ -1,16 +1,14 @@
+import json
 import os
 import pathlib
 import shutil
 import subprocess
+import sys
 import venv
 from unittest import mock
 
-import pytest
-
 import jupyter_client.kernelspec
-
-import json
-import sys
+import pytest
 
 PROJECT_ROOT = pathlib.Path(__file__).parent.absolute().parent
 NB_FILE_STD = pathlib.Path(__file__).parent.absolute() / 'notebook-std.ipynb'
@@ -18,8 +16,8 @@ NB_FILE_VIP = pathlib.Path(__file__).parent.absolute() / 'notebook-vip.ipynb'
 
 
 def test_nb_vip_no_venv(tmp_path, monkeypatch):
-    from vip_ipykernel.kernelspec import install as install_vip
     import vip_ipykernel.kernelspec
+    from vip_ipykernel.kernelspec import install as install_vip
 
     monkeypatch.chdir(tmp_path)
 
@@ -54,8 +52,8 @@ def test_nb_vip_no_venv(tmp_path, monkeypatch):
 
 
 def test_nb_vip_venv(tmp_path, monkeypatch):
-    from vip_ipykernel.kernelspec import install as install_vip
     import vip_ipykernel.kernelspec
+    from vip_ipykernel.kernelspec import install as install_vip
 
     monkeypatch.chdir(tmp_path)
 
