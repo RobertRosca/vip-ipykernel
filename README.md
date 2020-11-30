@@ -1,21 +1,41 @@
-[![Lifecycle](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Release](https://img.shields.io/github/release/robertrosca/vip-ipykernel.svg)](https://github.com/robertrosca/vip-ipykernel/releases/latest)
+<center><h1>ViP IPykernel</h1></center>
 
-[![Tests](https://github.com/RobertRosca/vip-ipykernel/workflows/Tests/badge.svg)](https://github.com/RobertRosca/vip-ipykernel/actions?query=workflow%3ATests)
-[![Codecov](https://codecov.io/gh/RobertRosca/vip-ipykernel/branch/main/graph/badge.svg)](https://codecov.io/gh/RobertRosca/vip-ipykernel)
+<center>
+  <a href="https://www.repostatus.org/#active" target="_blank">
+      <img src="https://img.shields.io/badge/repo%20status-active-brightgreen?style=flat-square" alt="Lifecycle">
+  </a>
+  <a href="https://github.com/RobertRosca/vip-ipykernel/releases" target="_blank">
+      <img src="https://img.shields.io/github/release-date/RobertRosca/vip-ipykernel?style=flat-square" alt="GitHub Release Date">
+  </a>
+  <a href="https://github.com/robertrosca/vip-ipykernel/releases/latest" target="_blank">
+      <img src="https://img.shields.io/github/release/robertrosca/vip-ipykernel.svg?style=flat-square" alt="Release">
+  </a>
+  <a href="https://pypi.org/project/vip-ipykernel" target="_blank">
+      <img src="https://img.shields.io/pypi/v/vip-ipykernel?style=flat-square" alt="PyPI">
+  </a>
+</center>
 
-# ViP IPykernel
+<center>
+  <a href="https://github.com/RobertRosca/vip-ipykernel/actions?query=workflow%3ATests" target="_blank">
+      <img src="https://img.shields.io/github/workflow/status/RobertRosca/vip-ipykernel/Tests/main?label=Tests&style=flat-square" alt="GitHub Workflow Status (main)">
+  </a>
+  <a href="https://codecov.io/gh/RobertRosca/vip-ipykernel" target="_blank">
+      <img src="https://img.shields.io/codecov/c/github/RobertRosca/vip-ipykernel?style=flat-square" alt="Codecov">
+  </a>
+</center>
 
-Venv in Parent IPykernel
+<center><h1>   </h1></center>
 
-- [ViP IPykernel](#vip-ipykernel)
-  - [Overview](#overview)
-  - [How it Works](#how-it-works)
-  - [Caveats and Gotchas](#caveats-and-gotchas)
-    - [VSCode Jupyter Notebook Integration](#vscode-jupyter-notebook-integration)
-    - [Venv Names](#venv-names)
-  - [Acknowledgements](#acknowledgements)
-  - [Todo](#todo)
+Venv in Parent IPykernel - an IPython kernel for Jupyter that runs out the closest venv
+
+
+- [Overview](#overview)
+- [How it Works](#how-it-works)
+- [Caveats and Gotchas](#caveats-and-gotchas)
+  - [VSCode Jupyter Notebook Integration](#vscode-jupyter-notebook-integration)
+  - [Venv Names](#venv-names)
+- [Acknowledgements](#acknowledgements)
+- [Todo](#todo)
 
 ## Overview
 
