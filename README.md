@@ -1,6 +1,8 @@
-<center><h1>ViP IPykernel</h1></center>
+<p align="center">
+  <h1>ViP IPykernel</h1>
+</p>
 
-<center>
+<p align="center">
   <a href="https://www.repostatus.org/#active" target="_blank">
       <img src="https://img.shields.io/badge/repo%20status-active-brightgreen?style=flat-square" alt="Lifecycle">
   </a>
@@ -13,21 +15,20 @@
   <a href="https://pypi.org/project/vip-ipykernel" target="_blank">
       <img src="https://img.shields.io/pypi/v/vip-ipykernel?style=flat-square" alt="PyPI">
   </a>
-</center>
+</p>
 
-<center>
+<p> </p>
+
+<p align="center">
   <a href="https://github.com/RobertRosca/vip-ipykernel/actions?query=workflow%3ATests" target="_blank">
       <img src="https://img.shields.io/github/workflow/status/RobertRosca/vip-ipykernel/Tests/main?label=Tests&style=flat-square" alt="GitHub Workflow Status (main)">
   </a>
   <a href="https://codecov.io/gh/RobertRosca/vip-ipykernel" target="_blank">
       <img src="https://img.shields.io/codecov/c/github/RobertRosca/vip-ipykernel?style=flat-square" alt="Codecov">
   </a>
-</center>
-
-<center><h1>   </h1></center>
+</p>
 
 Venv in Parent IPykernel - an IPython kernel for Jupyter that runs out the closest venv
-
 
 - [Overview](#overview)
 - [How it Works](#how-it-works)
