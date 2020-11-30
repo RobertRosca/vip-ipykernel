@@ -4,7 +4,7 @@ https://github.com/ipython/ipykernel/blob/master/ipykernel_launcher.py
 Entry point for launching an ViP-IPython kernel.
 """
 
-import subprocess
+import os
 import sys
 
 from vip_ipykernel import venv_search
@@ -23,4 +23,4 @@ if __name__ == '__main__':
     #  out how to do that, @takluyver can you help with this?
     print(f"Starting venv kernel with args: {args}")
 
-    subprocess.run(args)
+    os.execv(args[0], args)
