@@ -45,11 +45,11 @@ def test_nb_vip_no_venv(tmp_path, monkeypatch):
         assert "vip_ipykernel" in spec["argv"][2]
 
         #  Test the ViP kernel falling back to base python
-        pytest.main([
+        assert pytest.main([
             "--verbose",
             "--nbval",
             "notebook-std.ipynb",
-        ])
+        ]) == 0
 
 
 def test_nb_vip_venv(tmp_path, monkeypatch):
@@ -96,8 +96,8 @@ def test_nb_vip_venv(tmp_path, monkeypatch):
         assert sys.executable in spec["argv"][0]
 
         #  Test the ViP kernel notbook
-        pytest.main([
+        assert pytest.main([
             "--verbose",
             "--nbval",
             "notebook-vip.ipynb",
-        ])
+        ]) == 0
