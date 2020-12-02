@@ -1,6 +1,6 @@
 """Taken and modified from
 
-https://github.com/ipython/ipykernel/blob/master/ipykernel/tests/test_kernelspec.py
+https://github.com/ipython/ipykernel/blob/9cc8ea7103b8bb5a124b6906870994753dcdaf64/ipykernel/tests/test_kernelspec.py
 """
 
 # Copyright (c) IPython Development Team.

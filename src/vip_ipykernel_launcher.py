@@ -1,8 +1,11 @@
 """Taken and modified from
-https://github.com/ipython/ipykernel/blob/master/ipykernel_launcher.py
+https://github.com/ipython/ipykernel/blob/9cc8ea7103b8bb5a124b6906870994753dcdaf64/ipykernel_launcher.py
 
 Entry point for launching an ViP-IPython kernel.
 """
+
+# Copyright (c) IPython Development Team.
+# Distributed under the terms of the Modified BSD License.
 
 import os
 import sys

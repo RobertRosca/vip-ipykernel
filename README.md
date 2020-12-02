@@ -139,6 +139,9 @@ The kernel implementation and tests are largely copy-and-paste'd directly from
 the [ipykernel project](https://github.com/ipython/ipykernel) with some minor
 modifications made to search for a venv and launch python out of it if possible.
 
+Thank you to Thomas Kluyver (@takluyver) for the review of the initial code in
+the first PR: https://github.com/RobertRosca/vip-ipykernel/pull/1
+
 ## Todo
 
 - [ ] Expand tests to different versions of ipykernel/jupyter_core

@@ -16,6 +16,9 @@ def make_vip_ipkernel_cmd(
 ):
     """Build Popen command list for launching an ViP-IPython kernel.
 
+    Taken and modified from
+    https://github.com/ipython/ipykernel/blob/9cc8ea7103b8bb5a124b6906870994753dcdaf64/ipykernel/kernelspec.py#L23
+
     Parameters
     ----------
     mod : str, optional (default 'ipykernel_launcher')
