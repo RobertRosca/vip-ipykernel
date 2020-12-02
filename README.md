@@ -1,5 +1,5 @@
 <p align="center">
-  <h1>ViP IPykernel</h1>
+  <img src="https://raw.githubusercontent.com/RobertRosca/vip-ipykernel/main/.github/vip-ipykernel-logo.png" alt="ViP-IPykernel">
 </p>
 
 <p align="center">
