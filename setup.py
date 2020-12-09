@@ -21,7 +21,7 @@ def get_version(rel_path):
 setup(
     name='vip-ipykernel',
     url='https://github.com/RobertRosca/vip-ipykernel',
-    descripton="IPython Kernel that loads a Virtualenv in a Parent Directory",
+    description="IPython Kernel that loads a venv in a Parent Directory",
     long_description=read("README.md"),
     long_description_content_type='text/markdown',
     version=get_version("./src/vip_ipykernel/__init__.py"),
