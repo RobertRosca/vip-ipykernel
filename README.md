@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.repostatus.org/#active" target="_blank">
+  <a href="https://github.com/RobertRosca/vip-ipykernel/projects/1" target="_blank">
       <img src="https://img.shields.io/badge/repo%20status-active-brightgreen?style=flat-square" alt="Lifecycle">
   </a>
   <a href="https://github.com/RobertRosca/vip-ipykernel/releases" target="_blank">
