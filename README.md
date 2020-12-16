@@ -28,6 +28,13 @@
   </a>
 </p>
 
+<p> </p>
+
+<p align="center">
+    <a href="https://dev.to/robertrosca/vip-ipykernel-start-jupyter-kernels-in-the-closest-virtual-environment-3af0"> <img alt="DEV" src="https://img.shields.io/badge/DEV-article-7986f8?style=flat-square"> </a>
+    <a href="https://towardsdatascience.com/vip-ipykernel-start-jupyter-kernels-in-the-closest-virtual-environment-4d8877712559"> <img alt="Medium" src="https://img.shields.io/badge/medium-article-000000?style=flat-square"> </a>
+ </p>
+
 Venv in Parent IPykernel - an IPython kernel for Jupyter that runs out the closest venv
 
 - [Overview](#overview)
@@ -39,6 +46,10 @@ Venv in Parent IPykernel - an IPython kernel for Jupyter that runs out the close
 - [Todo](#todo)
 
 ## Overview
+
+Check the [medium](https://towardsdatascience.com/vip-ipykernel-start-jupyter-kernels-in-the-closest-virtual-environment-4d8877712559)
+or [dev.to](https://dev.to/robertrosca/vip-ipykernel-start-jupyter-kernels-in-the-closest-virtual-environment-3af0)
+articles to read more about the background behind this project.
 
 Do you use `venv`'s for all of your environments? Do you run Jupyter out of a
 system/user installed location or via JupyterHub? Are you bored of making a
