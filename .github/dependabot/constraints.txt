@@ -1,2 +1,2 @@
 ipykernel==5.4.2
-jupyter-client==6.1.7
+jupyter-client==6.1.11
