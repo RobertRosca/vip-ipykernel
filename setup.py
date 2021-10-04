@@ -38,7 +38,7 @@ setup(
     extras_require={
         'test': [
             'pytest>=5,<7',
-            'pytest-cov==2.*,>=2.10.1',
+            'pytest-cov>=2,<4',
             'nose==1.*,>=1.3.7',
             'nbval==0.9.*,>=0.9.6',
         ],
